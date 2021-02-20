@@ -99,7 +99,7 @@ sendForm.addEventListener('submit', (event) => {
     console.error("Error updating doc", error);
   });	
 
-  send(inputField.value);
+  //send(inputField.value);
 
   inputField.value = '';
   inputField.focus();
