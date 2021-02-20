@@ -7,8 +7,8 @@ firebase
       id: doc.id,
       ...doc.data(),
     }));
-    console.log("New value is :", data);
-    send(data);
+    console.log("New value is :", data[0].servo);
+    send(data[0].servo);
   });
 
 
