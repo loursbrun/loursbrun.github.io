@@ -7,7 +7,8 @@ firebase
       id: doc.id,
       ...doc.data(),
     }));
-    console.log("All data in 'books' collection", data);
+    console.log("New value is :", data);
+    send(data);
   });
 
 
