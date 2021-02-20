@@ -139,8 +139,7 @@ class BluetoothTerminal {
    */
   send(data) {
     // Convert data to the string using global object.
-    console.log("**** send data to arduino  ****");
-    data = String(data || 'AAA');
+    data = String(data || '');
 
     // Return rejected promise immediately if data is empty.
     if (!data) {
