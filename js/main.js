@@ -1,3 +1,16 @@
+// onsnapshot
+firebase
+  .firestore()
+  .collection("ble")
+  .onSnapshot((snapshot) => {
+    const data = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    console.log("All data in 'books' collection", data);
+  });
+
+
 // UI elements.
 const deviceNameLabel = document.getElementById('device-name');
 const connectButton = document.getElementById('connect');
@@ -62,12 +75,28 @@ connectButton.addEventListener('click', () => {
 });
 
 disconnectButton.addEventListener('click', () => {
+
   terminal.disconnect();
   deviceNameLabel.textContent = defaultDeviceName;
 });
 
 sendForm.addEventListener('submit', (event) => {
+
+
   event.preventDefault();
+
+  const bleRef = firebase.firestore().collection("ble").doc("ble");
+
+  bleRef
+  .update({
+    servo: parseInt(inputField.value),
+  })
+  .then(() => {
+    console.log("Document updated"); // Document updated
+  })
+  .catch((error) => {
+    console.error("Error updating doc", error);
+  });	
 
   send(inputField.value);
 

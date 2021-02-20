@@ -33,8 +33,9 @@
   "bugs": {
     "url": "https://github.com/loginov-rocks/Web-Bluetooth-Terminal/issues"
   },
-  "homepage": "https://loursbrun.github.io/",
+  "homepage": "https://loginov-rocks.github.io/Web-Bluetooth-Terminal",
   "dependencies": {
+    "firebase": "^8.2.9",
     "git-clone": "^0.1.0"
   },
   "devDependencies": {
